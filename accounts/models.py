@@ -21,6 +21,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=15, null=False, blank=True)
     email = models.CharField(max_length=15, null=False, blank=True)
     phone_number = models.CharField(max_length=15, null=False, blank=True)
+    #address = models.CharField(max_length=50, null=False, blank=True)
     #country = models.CharField(max_length=15, null=False, blank=True)
     #city = models.CharField(max_length=15, null=False, blank=True)
 
@@ -30,4 +31,6 @@ class Profile(models.Model):
 @receiver(post_save, sender=User)
 def craete_user_profile(sender, instance, created, **kwargs):
     if created:
-        Profile.objects.create(user = instance)
+        Profile.objects.create(
+            user = instance
+        )
