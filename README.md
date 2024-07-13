@@ -1,2 +1,2 @@
-# django_accounts
-Sample Auth
+# django Accounts
+Sample Authentication 
